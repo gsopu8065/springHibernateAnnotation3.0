@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Student Registration Form</title>
+</head>
+
+<body>
+
+	<h2>Registration Form</h2>
+
+	<br/>
+
+	<form action="./save" method="get">
+	Student Name: <input type="text" id="studentName" name="studentName" size="10"/>
+	<br/>
+	Student Marks: <input type="text" id="studentMarks" name="studentMarks" size="10"/>
+
+	<input type="submit" />
+	</form>
+
+
+	<a href="./getAllDetails">List of All Students</a>
+
+	<br/>
+
+	<div th:each="student : ${students}">
+		<span th:text="${student.studentName}"></span>
+		<span th:text="${student.marks}"></span>
+	</div>
+
+</body>
+</html>
